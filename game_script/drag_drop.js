@@ -126,6 +126,113 @@ window.HUB_EVENTS = {
   };
 
 
+const brands = [
+{
+  iconName: "https://kuruchon.github.io/1000.png",
+  brandName: "หนึ่งพัน" },
+
+{
+  iconName: "https://kuruchon.github.io/5000.png",
+  brandName: "ห้าพัน" },
+
+{
+  iconName: "https://kuruchon.github.io/300.png",
+  brandName: "สามร้อย" },
+
+{
+  iconName: "https://kuruchon.github.io/janggut.png",
+  brandName: "เครา" },
+
+{
+  iconName: "https://kuruchon.github.io/logo_256.png",
+  brandName: "โลโก้คุรุชน(สี)" },
+
+{
+  iconName: "https://kuruchon.github.io/logo_bw.png",
+  brandName: "โลโก้คุรุชน(ขาวดำ)" },
+
+{
+  iconName: "https://kuruchon.github.io/obec.png",
+  brandName: "โลโก้ สพฐ."},
+
+{
+  iconName: "https://kuruchon.github.io/simple1.jpg",
+  brandName: "เบอร์ 1" },
+
+{
+  iconName: "https://kuruchon.github.io/simple2.jpg",
+  brandName: "เบอร์ 2" },
+
+{
+  iconName: "https://kuruchon.github.io/simple3.jpg",
+  brandName: "เบอร์ 3"},
+
+{
+  iconName: "https://kuruchon.github.io/simple4.jpg",
+  brandName: "เบอร์ 4"},
+
+{
+  iconName: "https://kuruchon.github.io/takasila_logo_400.png",
+  brandName: "โลโก้ตักศิลา"},
+
+];
+
+
+let correct = 0;
+let total = 0;
+const totalDraggableItems = 8;
+const totalMatchingPairs = 6; // จะต้องน้อยกว่าหรือเท่ากับ totalDraggableItems
+
+const scoreSection = document.querySelector(".score");
+const correctSpan = scoreSection.querySelector(".correct");
+const totalSpan = scoreSection.querySelector(".total");
+const playAgainBtn = scoreSection.querySelector("#play-again-btn");
+
+const draggableItems = document.querySelector(".draggable-items");
+const matchingPairs = document.querySelector(".matching-pairs");
+let draggableElements;
+let droppableElements;
+
+initiateGame();
+
+
+function begin(){
+	document.querySelector('#begin').setAttribute('style','display:none;');
+	document.querySelector('#login-user').removeAttribute('style');
+	if(localStorage.getItem('user')+localStorage.getItem('org') != ''){
+	  document.querySelector('#user').value = localStorage.getItem('user');
+	  document.querySelector('#school').value = localStorage.getItem('org');
+	  document.querySelector('#user').readOnly = true;
+	  document.querySelector('#school').readOnly = true;
+	}
+}
+
+function logout(){
+	localStorage.clear();
+	document.querySelector('#user').value = '';
+	document.querySelector('#school').value = '';
+	document.querySelector('#user').readOnly = false;
+	document.querySelector('#school').readOnly = false;
+}
+
+function login(user,school){
+	if(document.querySelector('#user').value == ''){
+		document.querySelector('#user').setAttribute('placeholder','กรุณาพิมพ์ชื่อ-นามสกุล')}else if(document.querySelector('#school').value == ''){
+		document.querySelector('#school').setAttribute('placeholder','กรุณาพิมพ์โรงเรียน')
+	}else{
+	  //console.log(user.value,school.value)
+	  localStorage.setItem("user", user.value);
+	  localStorage.setItem("org", school.value);
+	  document.querySelector('.login').setAttribute('style','display:none;');
+	  document.querySelector('.score').removeAttribute('style');
+	  document.querySelector('.info').removeAttribute('style');
+	  document.querySelector('.draggable-items').removeAttribute('style');
+	  document.querySelector('.matching-pairs').removeAttribute('style');
+	  document.querySelector('.user').innerHTML = localStorage.getItem('user');
+	  document.querySelector('.org').innerHTML = localStorage.getItem('org');
+	  }
+	}
+
 function initiateGame() {
   //document.querySelector('.developer').innerHTML = unescape('%u0E1E%u0E31%u0E12%u0E19%u0E32%u0E42%u0E14%u0E22%3A%20%u0E04%u0E23%u0E39%u0E2D%u0E31%u0E1A%u0E14%u0E38%u0E25');
   if(document.querySelector('.developer').innerHTML != unescape('%u0E1E%u0E31%u0E12%u0E19%u0E32%u0E42%u0E14%u0E22%3A%20%u0E04%u0E23%u0E39%u0E2D%u0E31%u0E1A%u0E14%u0E38%u0E25%u0E40%u0E25%u0E32%u0E30')){

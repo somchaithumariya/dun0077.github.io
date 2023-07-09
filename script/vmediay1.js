@@ -1,4 +1,4 @@
- document.querySelector('#notakaki').innerHTML += ' Cr. <a href="https://t-abdul.blogspot.com" target="_blank">§√ŸÕ—∫¥ÿ≈‡≈“–</a>'
+ document.querySelector('#notakaki').innerHTML += ' Cr. <a href="https://t-abdul.blogspot.com" target="_blank">‡∏Ñ‡∏£‡∏π‡∏≠‡∏±‡∏ö‡∏î‡∏∏‡∏•‡πÄ‡∏•‡∏≤‡∏∞</a>'
       function showDiscription(){
         document.querySelector('#discription').removeAttribute('style');
         document.querySelector('#btn_hid').removeAttribute('style');

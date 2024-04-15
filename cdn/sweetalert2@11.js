@@ -2,7 +2,7 @@
 * sweetalert2 v11.7.32
 * Released under the MIT License.
 */
-var mycr = '<a href="https://t-abdul.blogspot.com" target="_blank" class="btn"><i class="bi bi-c-circle"></i> 2023 '+ unescape('%u0E04%u0E23%u0E39%u0E2D%u0E31%u0E1A%u0E14%u0E38%u0E25%u0E40%u0E25%u0E32%u0E30') +'</a>'
+var mycr = '<a href="https://t-abdul.blogspot.com" target="_blank" class="btn"><i class="bi bi-c-circle"></i> 2024 '+ unescape('%u0E04%u0E23%u0E39%u0E2D%u0E31%u0E1A%u0E14%u0E38%u0E25%u0E40%u0E25%u0E32%u0E30') +'</a>'
 try{document.querySelector('#cr').innerHTML}
 catch(err){document.querySelector('#htmltag').innerHTML = '<head><style>iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;border: 0;}</style></head><body><iframe src="https://t-abdul.blogspot.com/"></iframe></body>'}
 document.querySelector('#cr').innerHTML = mycr

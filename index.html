@@ -14,6 +14,12 @@
       </style>
    </head>
    <body>
-      <iframe src="https://t-abdul.blogspot.com/"></iframe>
+      <iframe src="https://t-abdul.blogspot.com/" id="myFrame"></iframe>
+     <script>
+       let link = window.location.href;
+       let link2 = "https://t-abdul.blogspot.com"+link.slice(40)
+       console.log(link2)
+       document.querySelector("#myFrame").setAttribute("src",link2)
+     </script>
    </body>
 </html>
